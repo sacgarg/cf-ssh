@@ -4,7 +4,7 @@ package cfmanifest
 func NewSSHManifest(appName string) (manifest *Manifest) {
 	manifest = NewManifest()
 	cfssh := manifest.AddApplication(appName)
-	cfssh["command"] = "curl http://tmate-bootstrap.cfapps.io | sh"
+	cfssh["command"] = "curl http://tmate-bootstrap.paas-dev.corp.adobe.com | sh"
 	cfssh["no-route"] = true
 	cfssh["instances"] = 1
 	return
@@ -19,7 +19,7 @@ func NewSSHManifestFromManifestPath(manifestPath string) (manifest *Manifest, er
 	cfssh := manifest.FirstApplication()
 	name := cfssh["name"].(string)
 	cfssh["name"] = name + "-ssh"
-	cfssh["command"] = "curl http://tmate-bootstrap.cfapps.io | sh"
+	cfssh["command"] = "curl http://tmate-bootstrap.paas-dev.corp.adobe.com | sh"
 	cfssh["no-route"] = true
 	cfssh["instances"] = 1
 
