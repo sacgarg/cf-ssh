@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/cloudfoundry-community/cf-ssh/cfmanifest"
+	"github.com/sacgarg/cf-ssh/cfmanifest"
 	"github.com/codegangsta/cli"
 )
 
