@@ -91,10 +91,10 @@ func cmdSSH(c *cli.Context) {
 		fmt.Print("timed out\n")
 	}
 	
-	fmt.Printf("Deploying SSH container '%s'...\n", sshHost)
+	fmt.Printf("Use this ssh command: ssh -p222 '%s@%s'...\n", sshUser, sshHost)
 	
 	fmt.Print("success\n")
-	cmd = exec.Command("ssh", "-p", "222", fmt.Sprintf("%s@%s", sshUser, sshHost))
+	cmd = exec.Command("ssh", "-p", "222", "-t", "-t", fmt.Sprintf("%s@%s", sshUser, sshHost))
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
