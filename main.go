@@ -90,7 +90,9 @@ func cmdSSH(c *cli.Context) {
 	if sshUser == "" {
 		fmt.Print("timed out\n")
 	}
-
+	
+	fmt.Sprintf("%s@%s", sshUser, sshHost)
+	
 	fmt.Print("success\n")
 	cmd = exec.Command("ssh", "-p", "222", "-t", "-t", fmt.Sprintf("%s@%s", sshUser, sshHost))
 	cmd.Stdin = os.Stdin
