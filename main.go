@@ -92,7 +92,7 @@ func cmdSSH(c *cli.Context) {
 	}
 
 	fmt.Print("success\n")
-	cmd = exec.Command("ssh", "-t", "-t", fmt.Sprintf("%s@%s", sshUser, sshHost))
+	cmd = exec.Command("ssh -p222", "-t", "-t", fmt.Sprintf("%s@%s", sshUser, sshHost))
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
